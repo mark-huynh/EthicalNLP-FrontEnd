@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/EthicalNLP-FrontEnd/static/css/main.f05143ed.chunk.css",
+    "main.js": "/EthicalNLP-FrontEnd/static/js/main.89f9a4d9.chunk.js",
+    "main.js.map": "/EthicalNLP-FrontEnd/static/js/main.89f9a4d9.chunk.js.map",
+    "runtime-main.js": "/EthicalNLP-FrontEnd/static/js/runtime-main.04061c8d.js",
+    "runtime-main.js.map": "/EthicalNLP-FrontEnd/static/js/runtime-main.04061c8d.js.map",
+    "static/css/2.9f5838fa.chunk.css": "/EthicalNLP-FrontEnd/static/css/2.9f5838fa.chunk.css",
+    "static/js/2.e78805cb.chunk.js": "/EthicalNLP-FrontEnd/static/js/2.e78805cb.chunk.js",
+    "static/js/2.e78805cb.chunk.js.map": "/EthicalNLP-FrontEnd/static/js/2.e78805cb.chunk.js.map",
+    "index.html": "/EthicalNLP-FrontEnd/index.html",
+    "precache-manifest.8f74c5ebe664b5c445bcff2a9d5460f7.js": "/EthicalNLP-FrontEnd/precache-manifest.8f74c5ebe664b5c445bcff2a9d5460f7.js",
+    "service-worker.js": "/EthicalNLP-FrontEnd/service-worker.js",
+    "static/css/2.9f5838fa.chunk.css.map": "/EthicalNLP-FrontEnd/static/css/2.9f5838fa.chunk.css.map",
+    "static/css/main.f05143ed.chunk.css.map": "/EthicalNLP-FrontEnd/static/css/main.f05143ed.chunk.css.map",
+    "static/js/2.e78805cb.chunk.js.LICENSE.txt": "/EthicalNLP-FrontEnd/static/js/2.e78805cb.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/EthicalNLP-FrontEnd/static/media/logo.5d5d9eef.svg",
+    "static/media/index.css": "/EthicalNLP-FrontEnd/static/media/roboto-vietnamese-400-normal.a8be5b46.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.04061c8d.js",
+    "static/css/2.9f5838fa.chunk.css",
+    "static/js/2.e78805cb.chunk.js",
+    "static/css/main.f05143ed.chunk.css",
+    "static/js/main.89f9a4d9.chunk.js"
+  ]
+}
