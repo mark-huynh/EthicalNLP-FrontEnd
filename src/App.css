@@ -1,3 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css?family=Mulish');
+
+
+.paperHead {
+  /* position: absolute; */
+width: 256px;
+height: 21px;
+left: 101px;
+top: 762px;
+
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 18px;
+/* or 82% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.2px;
+
+color: #000000;
+}
+
+.paperInner {
+  width: 378px;
+height: 21px;
+left: 102px;
+top: 875px;
+
+font-family: Mulish;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 18px;
+/* or 106% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.2px;
+
+color: #000000;
+}
+
 .App {
   text-align: center;
 }
