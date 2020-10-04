@@ -49,7 +49,7 @@ function PrefilledTextInputs(props) {
               {listItems}
             </Select>
           </FormControl>
-          <TextField variant="outlined" id="outlined-basic" label="Standard" value={props.text} onChange={props.inputOnChange}/>
+          <TextField variant="outlined" id="outlined-basic" label="word1, word2, ..." value={props.text} onChange={props.inputOnChange}/>
         </div>
     )
 }

@@ -22,6 +22,82 @@ import TextField from "@material-ui/core/TextField";
 import weat_data from "./prefills/WEAT_en.json";
 import PrefilledTextInputs from "./PrefilledTextInputs";
 import ExCard from "./ExCard.js";
+import ExCard2 from "./ExCard2.js";
+import mock from "./mock.json";
+
+import CanvasJSReact from "./canvasjs.react";
+//var CanvasJSReact = require('./canvasjs.react');
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+// import CanvasJs from 'canvasjs'
+
+// var dataPoints = mock.map(e => {
+//     return e
+// });
+
+var prop1Terms = mock["property_1_terms"];
+var prop2Terms = mock["property_2_terms"];
+var neutral = mock["neutral_terms"];
+
+var dataPoints = [];
+console.log(prop1Terms);
+for (var key of Object.keys(prop1Terms)) {
+  console.log(key);
+  dataPoints.push({
+    label: key,
+    x: prop1Terms[key][0],
+    y: prop1Terms[key][1],
+    z: prop1Terms[key][2],
+  });
+}
+
+for (var key of Object.keys(prop2Terms)) {
+  dataPoints.push({
+    label: key,
+    x: prop2Terms[key][0],
+    y: prop2Terms[key][1],
+    z: prop2Terms[key][2],
+  });
+}
+
+for (var key of Object.keys(neutral)) {
+  dataPoints.push({
+    label: key,
+    x: neutral[key][0],
+    y: neutral[key][1],
+    z: neutral[key][2],
+  });
+}
+
+var options = {
+  animationEnabled: true,
+  exportEnabled: true,
+  theme: "", // "light1", "light2", "dark1", "dark2"
+  title: {
+    text: "",
+    fontSize: 26,
+  },
+  axisX: {
+    title: "X",
+    logarithmic: true,
+  },
+  axisY: {
+    title: "Y",
+  },
+  data: [
+    {
+      type: "bubble",
+
+      indexLabel: "{label}",
+      toolTipContent:
+        "<b>{label}</b><br>Distance From Sun: {x}mn miles<br>Avg. Surface Temp: {y} Kelvin<br>Diameter: {z} miles",
+      dataPoints: [
+
+      ],
+    },
+  ],
+};
 
 const model1Keys = [
   "female_terms",
@@ -63,6 +139,99 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Dev() {
+  const onButtonClick = () => {
+    console.log(typeof term1Input);
+    console.log(typeof term1Input === "string");
+
+    var newArr1 = [];
+
+    if (typeof term1Input === "string" && term1Input !== "") {
+      newArr1 = term1Input.split(",");
+    } else {
+      newArr1 = term1Input;
+    }
+
+    var newArr2 = [];
+
+    if (typeof term2Input === "string" && term2Input !== "") {
+      newArr2 = term2Input.split(",");
+    } else {
+      newArr2 = term2Input;
+    }
+
+    var newArr3 = [];
+
+    if (typeof term3Input === "string" && term3Input !== "") {
+      newArr3 = term3Input.split(",");
+    } else {
+      newArr3 = term3Input;
+    }
+
+    console.log(newArr1);
+    console.log(newArr2);
+    console.log(newArr3);
+
+    options = {
+      animationEnabled: true,
+      exportEnabled: true,
+      theme: "", // "light1", "light2", "dark1", "dark2"
+      title: {
+        text: "",
+        fontSize: 26,
+      },
+      axisX: {
+        title: "X",
+        logarithmic: true,
+      },
+      axisY: {
+        title: "Y",
+      },
+      data: [
+        {
+          type: "bubble",
+
+          indexLabel: "{label}",
+          toolTipContent:
+            "<b>{label}</b><br>Distance From Sun: {x}mn miles<br>Avg. Surface Temp: {y} Kelvin<br>Diameter: {z} miles",
+          dataPoints: dataPoints,
+        },
+      ],
+    };
+    // forceUpdate()
+
+    // results = {
+    //   "coordinates": {
+    //     "she": ["-0.20227532", "0.25464466", "-0.078082986"],
+    //     "her": ["-0.21476142", "0.3768191", "0.02148349"],
+    //     "he": ["1.2290769", "-0.059459276", "-0.13752913"],
+    //     "him": ["0.13921604", "-0.10202482", "0.3984306"],
+    //     "doctor": ["-0.42410082", "-0.27203542", "-0.051558696"],
+    //     "nurse": ["-0.5271554", "-0.19794445", "-0.1527432"],
+    //   },
+    // };
+
+    // newDataPoints = [];
+
+    // for (var key in results["coordinates"]) {
+    //     newDataPoints.push(
+    //         {label: key, x: results[key][0], y: results[key][1]}
+    //     )
+    // }
+
+      fetch("https://3b4cc59aee8d.ngrok.io/fastText", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "OPTIONS": "/fastTest HTTP/1.1"
+        },
+        body: JSON.stringify({
+          "property_terms_1": ["string"],
+          "property_terms_2": ["string"],
+          "neutral_terms": ["string"],
+        }),
+      }).then((e) => console.log(e.json()));
+  };
+
   const [term1, setTerm1] = React.useState("");
   const handleChangeTerm1 = (event) => {
     setTerm1(event.target.value);
@@ -205,7 +374,7 @@ function Dev() {
                   Click on the evaluation metric you want to use
                 </span>
                 <Container>
-                  <ExCard />
+                  <ExCard2 />
                   <PrefilledTextInputs
                     items={model2Keys}
                     term={eval1}
@@ -223,10 +392,16 @@ function Dev() {
                 </Container>
               </Paper>
             </Grid>
+            <Button onClick={onButtonClick} variant="outlined" color="primary">
+              RUN
+            </Button>
           </Grid>
         </Grid>
         <Grid item xs={5}>
-          Yo
+          <CanvasJSChart
+            options={options}
+            /* onRef={ref => this.chart = ref} */
+          />
         </Grid>
       </Grid>
     </div>
