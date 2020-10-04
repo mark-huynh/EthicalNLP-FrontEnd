@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f54dcc0640594c71a0b2a7fba01adf23",
+    "revision": "5297e09903a742c398af20d8ed4558ff",
     "url": "/EthicalNLP-FrontEnd/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/EthicalNLP-FrontEnd/static/css/2.9f5838fa.chunk.css"
   },
   {
-    "revision": "983438eda3b532cd5fef",
+    "revision": "e02bf3e762d7c9df4bc4",
     "url": "/EthicalNLP-FrontEnd/static/css/main.f05143ed.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/EthicalNLP-FrontEnd/static/js/2.0c597efe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "983438eda3b532cd5fef",
-    "url": "/EthicalNLP-FrontEnd/static/js/main.b95e8a54.chunk.js"
+    "revision": "e02bf3e762d7c9df4bc4",
+    "url": "/EthicalNLP-FrontEnd/static/js/main.9fbc301e.chunk.js"
   },
   {
     "revision": "3b7fb970a7bc3c104225",

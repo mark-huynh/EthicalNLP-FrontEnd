@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/EthicalNLP-FrontEnd/precache-manifest.0e9f69a646a65a23fe665d42ab02fdec.js"
+  "/EthicalNLP-FrontEnd/precache-manifest.8ed338aa996426de077cecac7094b530.js"
 );
 
 self.addEventListener('message', (event) => {
